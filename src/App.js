@@ -1,14 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import SignIn from './components/SignIn'
+import React from 'react'
+import { CookiesProvider } from 'react-cookie'
+import TokenAuth from './components/TokenAuth.js'
 
-function App() {
-  return (
-    <div className="App">
-      <SignIn />
-    </div>
-  );
+class AppComponent extends React.Component {
+  render() {
+    return (
+      <CookiesProvider>
+        <TokenAuth />
+      </CookiesProvider>
+    )
+  }
 }
 
-export default App;
+AppComponent.defaultProps = {}
+
+export default AppComponent
